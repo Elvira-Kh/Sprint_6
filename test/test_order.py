@@ -1,4 +1,3 @@
-from conftest import driver
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
 from data import user_1, user_2

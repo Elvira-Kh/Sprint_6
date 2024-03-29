@@ -6,6 +6,10 @@ import allure
 
 
 class MainPage(BasePage):
+    @staticmethod
+    @allure.step('Перейти по ссылке')
+    def check_redirect_dzen(cls):
+        cls.switch_to_window()
     @allure.step('Клик на вопрос')
     def click_question(self, number):
         method, locator = MainPageLocators.QUESTION
@@ -22,9 +26,6 @@ class MainPage(BasePage):
     def click_yandex_logo(self):
         self.click_to_element(MainPageLocators.YANDEX_LOGO)
 
-    @allure.step('Перейти по ссылке')
-    def check_redirect_dzen(self):
-        self.switch_to_window()
 
     @allure.step('Клик на лого Самокат')
     def click_samokat_logo(self):

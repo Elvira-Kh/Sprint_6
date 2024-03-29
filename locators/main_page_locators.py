@@ -1,6 +1,4 @@
 from selenium.webdriver.common.by import By
-
-
 class MainPageLocators:
 
     YANDEX_BUTTON = [By.XPATH, '//img[@src="/assets/ya.svg"]']
