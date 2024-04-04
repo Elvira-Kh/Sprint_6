@@ -6,10 +6,11 @@ import allure
 
 
 class MainPage(BasePage):
-    @staticmethod
+
     @allure.step('Перейти по ссылке')
-    def check_redirect_dzen(cls):
-        cls.switch_to_window()
+    def check_redirect_dzen(self):
+        self.switch_to_window()
+
     @allure.step('Клик на вопрос')
     def click_question(self, number):
         method, locator = MainPageLocators.QUESTION
@@ -21,6 +22,11 @@ class MainPage(BasePage):
         method, locator = MainPageLocators.ANSWER
         locator = locator.format(number)
         return self.get_text((method, locator))
+
+    @allure.step('Клик на вопрос и получение ответа')
+    def click_on_question_and_get_answer(self, question_num):
+        self.click_question(question_num)
+        return self.get_answer(question_num)
 
     @allure.step('Клик на лого Яндекс')
     def click_yandex_logo(self):

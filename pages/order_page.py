@@ -58,7 +58,7 @@ class OrderPage(BasePage):
 
     @allure.step('Окно "Заказ оформлен"')
     def check_success_order(self):
-        return self.find_element(OrderPageLocators.ORDER_SUCCESS_WINDOW).text
+        return self.get_text(OrderPageLocators.ORDER_SUCCESS_WINDOW)
 
     @allure.step('Создание заказа')
     def create_order(self, name, last_name, address, station_locator, phone, date_locator, term_locator, color_locator, comments):
