@@ -1,3 +1,5 @@
+from selenium.webdriver.common.by import By
+
 class ImportantQuestions:
     QUESTION_1 = [By.ID, "accordion__heading-0"]
     QUESTION_2 = [By.ID, "accordion__heading-1"]

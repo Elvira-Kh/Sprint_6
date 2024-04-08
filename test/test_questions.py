@@ -1,4 +1,11 @@
 import pytest
+import allure
+from conftest import driver
+from data import Answers
+from pages.main_page import MainPage
+
+
+
 class TestQuestions:
     @allure.title("Проверка ответов на важные вопросы")
     @pytest.mark.parametrize("question_num, expected_answer",
@@ -11,7 +18,7 @@ class TestQuestions:
                               (6, Answers.answer_7)
                               ]
                              )
-    def test_questions(self, question_num, expected_answer):
-        main_page = MainPage(self)
+    def test_questions(self, question_num, expected_answer, driver):
+        main_page = MainPage(self, driver)
         result = main_page.click_on_question_and_get_answer(question_num)
         assert main_page.check_answer(result, expected_answer)
