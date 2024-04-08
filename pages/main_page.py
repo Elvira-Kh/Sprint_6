@@ -9,7 +9,7 @@ class MainPage(BasePage):
 
     @allure.step('Перейти по ссылке')
     def check_redirect_dzen(self):
-        self.switch_to_window()
+        self.switch_to_window(MainPageLocators.DZEN)
 
     @allure.step('Клик на вопрос')
     def click_question(self, number):
